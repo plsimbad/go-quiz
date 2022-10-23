@@ -16,7 +16,6 @@ type questions struct {
 func main() {
 
 	path := flag.String("f", "./problems.csv", "a string")
-	// timeInSec := flag.Int("t", 10, "a int")
 	flag.Parse()
 
 	qLst, err := readCSVFile(*path)
@@ -56,8 +55,4 @@ func readCSVFile(path string) ([]questions, error) {
 	}
 
 	return retLst, nil
-}
-
-func startTimer(timeInSec int) *time.Timer {
-	return time.NewTimer(time.Duration(timeInSec) * time.Second)
 }
